@@ -75,6 +75,22 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionProjects(){
+        return $this->render('projects');
+    }
+
+    public function actionMarket(){
+        return $this->render('market');
+    }
+
+    public function actionSpecialProjects(){
+        return $this->render('special-projects');
+    }
+
+    public function actionNews(){
+        return $this->render('news');
+    }
+
     /**
      * Logs in a user.
      *
