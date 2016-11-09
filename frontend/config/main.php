@@ -11,6 +11,8 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'sourceLanguage' => 'ru',
+    'language' => 'ru',
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -37,6 +39,9 @@ return [
         ],
 
         'urlManager' => [
+            'class' => 'codemix\localeurls\UrlManager',
+            'languages' => ['ru', 'en'],
+            'enableDefaultLanguageUrlCode' => true,
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
@@ -44,6 +49,14 @@ return [
             ],
         ],
 
+        'i18n' => [
+            'translations' => [
+                'common*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];
